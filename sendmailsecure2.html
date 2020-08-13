@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Send Email</title>
+	<script src="https://smtpjs.com/v3/smtp.js">
+        </script>  
+ 
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+	        SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
+			To : 'ptreadway@suffolk.edu',
+			From : "DoNotReply@gmail.com",
+			Subject : "Hey You...Join Us Today",
+			Body : "<h1>Join us now in the IT Army.</h1>",
+			})
+			.then(function(message){
+				alert("mail sent successfully")
+			});
+		}
+	</script>
+</head>
+<body>  
+	<form method="post">
+		<input type="button" value="Send Email" onclick="sendEmail()"/>
+	</form>  
+</body>
+</html>
