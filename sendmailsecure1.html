@@ -9,15 +9,11 @@
 	<script type="text/javascript">
 		function sendEmail() {
 			Email.send({
-			SecureToken : "3c6d587c-ce92-4d3f-a0f3-4bd4a719115d",
-				//Host: "smtp.gmail.com",
-				//Port: "587",
-				//Username : "ISOM215@gmail.com",
-				//Password : "Boston101",
-				To : 'ptreadway@suffolk.edu',
-				From : "ISOM215@gmail.com",
-				Subject : "Join Us",
-				Body : "<h1>Join us now in the IT Army.</h1>",
+	        SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
+			To : 'ptreadway@suffolk.edu',
+			From : "DoNotReply@gmail.com",
+			Subject : "Join Us Today",
+			Body : "<h1>Join us now in the IT Army.</h1>",
 			})
 			.then(function(message){
 				alert("mail sent successfully")
