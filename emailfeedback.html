@@ -66,14 +66,14 @@ function sendEmail() {
 		
 var email_to_send_to = document.getElementById("email_address").value;
 
-// Check email addres entered and make sure valid	
+// Check email address entered and make sure valid	
 if (ValidateEmail())
   {
     //console.log("in sendEmail...");
   
     Email.send({
     SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
-    To : "ptreadway@suffolk.edu",  //replace with YOUR suffolk.edu email address
+    To : "ptreadway@suffolk.edu",  
     From : "DoNotReply@gmail.com",
     Cc : email_to_send_to,
     Subject : "Feedback Received",
