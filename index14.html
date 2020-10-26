@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+body {
+  background-image: url('large.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* For width 600px and larger: */
+@media only screen and (min-device-width: 600px) {
+  body {
+    background-image: url('medium.jpg');
+	background-size: cover;
+  }
+  
+/* For width 300px and larger: */
+@media only screen and (min-device-width: 300px) {
+  body {
+    background-image: url('small.jpg');
+	background-size: cover;
+  }
+}
+        </style>
+    </head>	
+    <body>
+	<p>Image Element</p>
+    </body>
+</html>
