@@ -52,12 +52,12 @@ Canvas
 --> 
 		
      		Email.send({
-            SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
+            SecureToken : "351b0ae4-5cbd-4406-b422-f54934a4567d",
 	        To : email_to_send_to,
             From : "DoNotReply@gmail.com",
-	        Cc : "pete.treadway@gmail.com",				
+	        Bcc : "ptreadway@suffolk.edu",				
 			Subject : "We Received Your Feedback",		   
-			Body : "<h2 style=color:#228B22>Thank You For Your Submission "+
+			Body : "<h2 style=color:#228B22>Thanks For Your Submission "+
 			document.getElementById("submitter_name").value+
 			"</h2><hr><br>"+		
         	"<br>Feedback: "+document.getElementById("mytextarea").value+"<br>"+
@@ -282,11 +282,9 @@ xx.value=mydataURL;
 OPTIONAL:  Put a "Stop recording" button on the form
 <input type="button"  value="Stop Recording" onclick="stopStreamedVideo();"/><br>
 -->
-  <label>Name:</label>  <input id="submitter_name" type="text" size="45"><br>
-  <label>Email Address: </label>  <input id="email_address" type="email" required size="45"><br>
-<textarea id="mytextarea" rows="10" cols="300">
-  Enter your feedback here:
-
+  <label>Name:</label>  <input required id="submitter_name" type="text" size="45"><br>
+  <label>Email Address: </label> <input required id="email_address" type="email" required size="45"><br>
+<textarea required placeholder="Enter your feedback here:" id="mytextarea" rows="10" cols="300">
 </textarea>  
 </body>
 </html>
