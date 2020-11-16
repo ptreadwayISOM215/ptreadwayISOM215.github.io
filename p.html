@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  padding: 20px;
+  color: black;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background: white;
+	background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-attachment: fixed;
+    background-position: center; 
+	color: black;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {background: green;
+    background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+  background: blue;
+    background-image: url('peace_small.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body 
+  {
+  background: orange;
+  background-image: url('peace_27_pixel_width.jpg');
+  	background-repeat: no-repeat;
+	background-size: cover;
+	color: pink;
+  }
+} 
+  <!--
+  background-size: 992px 745px; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 360px 740px;   
+  -->
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {background: pink;}
+}
+</style>
+</head>
+<body>
+
+<p class=body>Click the PLAY button to hear some relaxing music.</p>
+<audio id="myaudio" controls autoplay>
+  <source src="https://ptreadwayisom215.github.io/music.mp3" 
+          type="audio/mpeg"	  
+  >
+Your browser does not support the MP3 audio element.
+</audio>
+</body>
+</html>
