@@ -1,24 +1,76 @@
-
-<!-- 
-Example of HTML Audio
--->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>HTML Audio Example</title>
-<style type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  padding: 1px;
+  color: black;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background: red;
+	background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+  }
+}
 
-	  body {
-	      background-image: url('peace.jpg');
-		  background-repeat: no-repeat;
-		  background-attachment: fixed;
-          background-size: cover;
-	  }
-</style>	  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {background: green;}
+    background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+  background: blue;
+    background-image: url('peace_small.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body 
+  {
+  background: orange;
+  background-image: url('peace_27_pixel_width.jpg');
+  	background-repeat: no-repeat;
+	background-size: cover;
+	color: pink;
+  }
+} 
+  <!--
+  background-size: 992px 745px; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 360px 740px;   
+  -->
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {background: pink;}
+}
+</style>
 </head>
 <body>
-<audio controls>
-  <source src="https://ptreadwayisom215.github.io/music.mp3" type="audio/mpeg">
+
+<p class=body>Click the PLAY button to hear some relaxing music.</p>
+<audio id="myaudio" controls autoplay>
+  <source src="https://ptreadwayisom215.github.io/music.mp3" 
+          type="audio/mpeg"	  
+  >
 Your browser does not support the MP3 audio element.
 </audio>
 </body>
