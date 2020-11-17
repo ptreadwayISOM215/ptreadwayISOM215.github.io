@@ -1,30 +1,84 @@
-
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<!--
+  audio.html
+-->
+<html>
 <head>
-  <meta charset="utf-8">
-<title> Site Coming Soon </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-p.a {
-  font-family: "Press Start 2P","Times New Roman", Times, serif;
+body 
+{
+  padding: 20px;
+  color: black;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background: white;
+	background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-attachment: fixed;
+    background-position: center; 
+	color: red;
+  }
 }
 
-p.b {
-  font-family: Arial, Helvetica, sans-serif;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {background: green;
+    background-image: url('peace_27_pixel_width.jpg');
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-attachment: fixed;
+    background-position: center; 
+	color: white;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+  background: blue;
+    background-image: url('peace_small.jpg');
+	background-repeat: no-repeat;
+    background-size: auto;
+	background-attachment: fixed;
+    background-position: center; 
+	color: white;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body 
+  {
+  background: orange;
+  background-image: url('peace_large.jpg');
+  	background-repeat: no-repeat;
+	background-size: auto;
+	background-attachment: fixed;
+    background-position: center; 
+	color: black;
+  }
+  } 
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {background: pink;}
 }
 </style>
 </head>
-
 <body>
-<form name="MyForm" id="MyForm">
 
-<center>
-<img id="Image1" src="comingsoon.png" style="border-width:0px;" />
-
-<p class="a">Our new site is not quite ready yet.  Come back soon!</p>
-
-</center>
-</form>
+<p class=body>Click the PLAY button to hear some relaxing music.</p>
+<audio id="myaudio" controls autoplay>
+  <source src="https://ptreadwayisom215.github.io/music.mp3" 
+          type="audio/mpeg"	  
+  >
+Your browser does not support the MP3 audio element.
+</audio>
 </body>
 </html>
