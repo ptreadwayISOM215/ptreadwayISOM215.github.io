@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head> 
+  <body>
+  <table>
+  <th>Me</th><th>You</th>
+  <tr><td>
+    <canvas id="MeCanvas" width="578" height="200"></canvas>
+	</td>
+	<td>
+	    <canvas id="YouCanvas" width="578" height="200"></canvas>
+	</td>
+</tr>
+</table>	
+  <script>
+      var Mecanvas = document.getElementById('MeCanvas');
+	  var Youcanvas = document.getElementById('MeCanvas');
+      var context1 = Mecanvas.getContext('2d');
+	  var context2 = Youcanvas.getContext('2d');
+
+      // do cool things with the context
+      context1.font = '40pt Calibri';
+      context1.fillStyle = 'blue';
+      context1.fillText('Hello Me!', 150, 100);
+	  
+	  context2.font = '40pt Arial';
+      context2.fillStyle = 'red';
+      context2.fillText('Hello You!', 150, 100);
+	  
+    </script>
+  </body>
+</html>      
