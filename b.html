@@ -1,76 +1,120 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
-<!-- Name:  Tyler Treadway
-     Class: ISOM215A Mobile Development
-     Assignment: Meet the Billionnaires Assignment
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<title>Meet the Billionaires</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>	
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<title>Snap Ya Photo</title>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-<style>
-hr {
-  margin-top: 0em;
-  margin-bottom: 0em;
-  border: 2px solid black;
-  border-radius: 5px
+
+<script>
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
 }
-div.left 
-{
-text-align: left;
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
 }
 
 
-p::first-letter {
-  color: #000000;
-  font-size: x-large;
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "First Name"; }
+	td:nth-of-type(2):before { content: "Last Name"; }
+	td:nth-of-type(3):before { content: "Job Title"; }
+	td:nth-of-type(4):before { content: "Favorite Color"; }
+	td:nth-of-type(5):before { content: "Wars of Trek?"; }
+	td:nth-of-type(6):before { content: "Secret Alias"; }
+	td:nth-of-type(7):before { content: "Date of Birth"; }
+	td:nth-of-type(8):before { content: "Dream Vacation City"; }
+	td:nth-of-type(9):before { content: "GPA"; }
+	td:nth-of-type(10):before { content: "Arbitrary Data"; }
+
 }
 </style>
-<script>
-//import dynamic menu
-$.get("headnav.html", function(data){
-    $("#nav-placeholder").prepend(data);
-});
-</script>
 
 </head>
-
 <body>
-<form>
+<table>
+	<thead>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Job Title</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>James</td>
+		<td>Matman</td>
+		<td>Chief Sandwich Eater</td>
+	</tr>
+	<tr>
+		<td>The</td>
+		<td>Tick</td>
+		<td>Crimefighter Sorta</td>
+	</tr>
+	</tbody>
+</table>
 
-<div id="nav-placeholder">
-<center>
-<h3><b>Today's billionaires...Tomorrow your best buddy?</b></h3>
-<img id="Image0" src="img0.jpg" height="50%" width="100%" style="border-width:0px;" /><p>
-<div class="left">
-Elon Musk is a South African-born American entrepreneur and businessman who founded X.com in 1999 (which later became PayPal), SpaceX in 2002 and Tesla Motors in 2003. Musk became a multimillionaire in his late 20s when he sold his start-up company, Zip2, to a division of Compaq Computers.</p>
-</div>
-<img id="Image1" src="img1.jpg" height="50%" width="100%" style="border-width:0px;" /><br>
-Michael Rubens Bloomberg KBE is an American businessman, politician, philanthropist, and author. He is the majority owner and co-founder of Bloomberg L.P.. He was the mayor of New York City from 2002 to 2013, and was briefly a candidate in the 2020 Democratic presidential primaries. 
-<img id="Image2" src="img2.jpg" height="50%" width="100%" style="border-width:0px;" /><br>
-Jeffrey Preston Bezos is an American internet entrepreneur, industrialist, media proprietor, and investor. He is best known as the founder, CEO, and president of the multi-national technology company Amazon. 
-<img id="Image3" src="img3.jpg" height="50%" width="100%" style="border-width:0px;" /><br>
-George Soros, Hon FBA is a Hungarian-American billionaire investor and philanthropist. As of May 2020, he had a net worth of $8.3 billion, having donated more than $32 billion to the Open Society Foundations. Born in Budapest, Soros survived Nazi Germany-occupied Hungary and moved to the United Kingdom in 1947.
-<img id="Image4" src="img4.jpg" height="50%" width="100%" style="border-width:0px;" /><br>
-Mark Elliot Zuckerberg is an American media magnate, internet entrepreneur, and philanthropist. He is known for co-founding Facebook, Inc. and serves as its chairman, chief executive officer, and controlling shareholder.
-</center>
-</form>
-<hr>
- <footer>
-  Author: Suffolk Student XYZ.  Go back to <a href="https://ptreadwayisom215.github.io">home page</a>
-</footer> 
-<hr>
+
 </body>
-</html>
-	
