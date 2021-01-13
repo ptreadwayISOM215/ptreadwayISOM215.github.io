@@ -8,17 +8,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<title>Snap Ya Photo</title>
+	<title>Send Ya Photo</title>
 <!--- 
 Include email javascript API
 -->
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
  
- <!----------------------------------
-         stopStreamedVideo() 
- ------------------------------------>
 <script>
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//							stopStreamedVidel()
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function stopStreamedVideo() {
 var videoElem = document.getElementById('video');
   const stream = videoElem.srcObject;
@@ -32,6 +32,42 @@ var videoElem = document.getElementById('video');
 }
 </script>
 
+<script type="text/javascript">
+	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	//							ValidateEmail()
+	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	function ValidateEmail() 
+	{
+	var email_to_send_to = document.getElementById("email_address").value;
+	//console.log("in ValidateEmail...");
+	
+	 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_to_send_to))
+	  {
+		return (true)
+	  }
+		alert("Invalid email address entered.")
+		return (false)
+	}
+	</script>
+
+<script>
+	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	//	CheckRequiredFields()
+	//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	// Insure non-email form fields are not blank
+	function CheckRequiredFields() 
+   {
+     var name_field  = document.getElementById("submitter_name");
+     var comment_field = document.getElementById("mytextarea");
+     if (name_field.value.length == 0 || comment_field.value.length == 0  )
+      { 
+         alert("The NAME and COMMENT fields cannot be blank.");  	
+         return false; 
+      }  	
+      return true; 
+    } 
+</script>
 <!--
 Canvas
 -->
@@ -54,7 +90,11 @@ Canvas
 <!-- If image > 1000 bytes...it won't be embebbed in email body.
 //alert(myAttachment.length)
 --> 
-		
+// Check email address entered and make sure valid	
+if (ValidateEmail())
+  {		
+  if (CheckRequiredFields())
+  {
      		Email.send({
     Host: "smtp.gmail.com",
   	Username : "ptreadwayISOM215@gmail.com",
@@ -80,7 +120,7 @@ Canvas
 			
 			// OPTIONAL:  Uncomment line below to stop video recording
 			stopStreamedVideo(video);
-		}
+		}}}
 	</script>
 
 
@@ -170,7 +210,7 @@ function convertCanvasToImage(canvas) {
 </div>
 	<br>
 <button id="snap" class="snap">Snap Photo</button>
-<input style="border-radius: 25px;  font-weight: normal;  background-image: linear-gradient(to bottom,rgba(255,0,0,.5), rgba(255,0,0,0));padding: 3px;  " type="button" class="snap" value="Email Your Picture" onclick="sendEmail('peter.treadway@mass.gov')"/></p>
+<input style="border-radius: 25px;  font-weight: normal;  background-image: linear-gradient(to bottom,rgba(34,139,34,.5), rgba(34,139,34,0));padding: 3px;  " type="button" class="snap" value="Email Your Picture" onclick="sendEmail('peter.treadway@mass.gov')"/></p>
 	<script>
 
 		// Put event listeners into place
@@ -273,7 +313,7 @@ font-size: 16px;
 #snap {
   border-radius: 25px;
   font-weight: normal;
-  background-image: linear-gradient(to bottom,rgba(255,0,0,.5), rgba(255,0,0,0));
+  background-image: linear-gradient(to bottom,rgba(34,139,34,.5), rgba(34,139,34,0));
   padding: 3px;  
 }	
 
@@ -312,16 +352,18 @@ xx.value=mydataURL;
 //alert(mydataURL);
   
 }
-
 </script>
 
 <!--
 OPTIONAL:  Put a "Stop recording" button on the form
 <input type="button"  value="Stop Recording" onclick="stopStreamedVideo();"/><br>
 -->
-  <label>Name:          </label>  <input id="submitter_name" type="text" required placeholder="Jane Doe" size="45"><br>
-  <label>Email Address: </label>  <input id="email_address" type="email" required size="36" placeholder="JaneDoe@gmail.com"><br>
-<textarea id="mytextarea" placeholder="Enter your comments here." rows="5" cols="50">
+  <label>Name:</label><br>
+  <input id="submitter_name" type="text" required placeholder="Jane Doe" size="45"><br>
+  <label>Email Address:</label><br>
+  <input id="email_address" type="email" required size="45" placeholder="JaneDoe@gmail.com"><br>
+  <label>Comment:</label><br>
+  <textarea id="mytextarea" placeholder="Enter your comments here." rows="5" cols="45"  size="45">
 </textarea>  
 </body>
 </html>
